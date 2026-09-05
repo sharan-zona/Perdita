@@ -1,0 +1,31 @@
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2.5rem;
+  justify-content: center;
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+}
+
+.loading-spinner__ring {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-line);
+  border-top-color: var(--color-ink);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* This spinner is functional feedback, not decoration, so it keeps
+   spinning (slower) even when the user has asked for reduced motion —
+   overriding the blanket rule in index.css via higher selector specificity. */
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner__ring {
+    animation-duration: 1.4s !important;
+  }
+}

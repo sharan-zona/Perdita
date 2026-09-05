@@ -1,0 +1,78 @@
+/* Same auth-card system as Login.css. Duplicated deliberately rather
+   than importing Login.css from here, so the two pages can diverge
+   in style later without fighting a shared file. */
+
+.auth-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-card h1 { font-size: 1.5rem; }
+
+.auth-card__sub {
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+  margin: 0.4rem 0 1.5rem;
+}
+
+.auth-card label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  margin-top: 1rem;
+}
+
+.auth-card input {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.auth-card .btn {
+  margin-top: 1.75rem;
+  width: 100%;
+  text-align: center;
+  border: none;
+}
+
+.auth-card .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-card__error {
+  background: var(--color-lost-bg);
+  color: var(--color-lost);
+  padding: 0.65rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.auth-card__footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.auth-card__footer a {
+  color: var(--color-ink);
+  font-weight: 600;
+}

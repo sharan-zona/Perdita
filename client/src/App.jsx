@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-
-function Home() {
-  return <h1>Perdita</h1>;
-}
+import MainLayout from "./layouts/MainLayout.jsx";
+import Home from "./pages/Home.jsx";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+      </Route>
     </Routes>
   );
 }

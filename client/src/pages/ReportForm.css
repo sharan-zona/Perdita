@@ -1,0 +1,77 @@
+.report-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.report-form {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+}
+
+.report-form h1 { font-size: 1.5rem; }
+
+.report-form__sub {
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+  margin: 0.4rem 0 1.5rem;
+}
+
+.report-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 1rem 0 0.4rem;
+}
+
+.report-form input,
+.report-form select,
+.report-form textarea {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.report-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.report-form__row > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.report-form .btn {
+  margin-top: 1.75rem;
+  border: none;
+}
+
+.report-form .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.report-form__error {
+  background: var(--color-lost-bg);
+  color: var(--color-lost);
+  padding: 0.65rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.report-form__field-error {
+  color: var(--color-lost);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 480px) {
+  .report-form__row { grid-template-columns: 1fr; }
+}

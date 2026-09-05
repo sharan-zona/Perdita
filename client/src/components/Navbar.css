@@ -1,0 +1,56 @@
+.navbar {
+  border-bottom: 1px solid var(--color-line);
+  background: var(--color-paper-raised);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.navbar__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar__brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+}
+
+.navbar__links a:hover {
+  color: var(--color-ink);
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.navbar__signup {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Mobile: collapse the link row, keep brand + actions */
+@media (max-width: 720px) {
+  .navbar__links {
+    display: none;
+  }
+}

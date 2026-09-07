@@ -1,4 +1,3 @@
-cat > ~/Documents/Perdita/server/app/database.py << 'EOF'
 """
 Database engine and session configuration.
 
@@ -36,4 +35,3 @@ def get_db():
         yield db
     finally:
         db.close()
-EOF

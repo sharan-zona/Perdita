@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
 
   // GitHub Pages repository path
-  base: '/Perdita/',
+  base: "/Perdita/",
 
   server: {
     port: 5173,

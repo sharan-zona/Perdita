@@ -1,8 +1,7 @@
 from datetime import datetime
 from enum import Enum
-
 from sqlalchemy import Boolean, DateTime, Integer, String
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.database import Base
 
@@ -52,3 +51,14 @@ class User(Base):
         default=datetime.utcnow,
         nullable=False,
     )
+items = relationship(
+    "Item",
+    back_populates="owner",
+    cascade="all, delete-orphan",
+)
+
+claims = relationship(
+    "Claim",
+    back_populates="claimant",
+    cascade="all, delete-orphan",
+)

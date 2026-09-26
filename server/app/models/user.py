@@ -1,5 +1,6 @@
 from datetime import datetime
 from enum import Enum
+
 from sqlalchemy import Boolean, DateTime, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -14,9 +15,16 @@ class UserRole(str, Enum):
 class User(Base):
     __tablename__ = "users"
 
-    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    id: Mapped[int] = mapped_column(
+        Integer,
+        primary_key=True,
+        index=True,
+    )
 
-    name: Mapped[str] = mapped_column(String(100), nullable=False)
+    name: Mapped[str] = mapped_column(
+        String(100),
+        nullable=False,
+    )
 
     email: Mapped[str] = mapped_column(
         String(255),
@@ -51,14 +59,24 @@ class User(Base):
         default=datetime.utcnow,
         nullable=False,
     )
-items = relationship(
-    "Item",
-    back_populates="owner",
-    cascade="all, delete-orphan",
-)
 
-claims = relationship(
-    "Claim",
-    back_populates="claimant",
-    cascade="all, delete-orphan",
-)
+    items = relationship(
+        "Item",
+        back_populates="reporter",
+        foreign_keys="Item.reporter_id",
+        cascade="all, delete-orphan",
+    )
+
+    claims = relationship(
+        "Claim",
+        back_populates="claimant",
+        cascade="all, delete-orphan",
+    )
+
+    reports = relationship(
+        "Report",
+        back_populates="reporter",
+        foreign_keys="Report.reported_by",
+        cascade="all, delete-orphan",
+    )
+
